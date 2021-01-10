@@ -1,4 +1,4 @@
-package com.alexkozyura.tutorial.jdbc2.database.interfaces;
+package com.alexkozyura.tutorial.jdbc2.database;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
