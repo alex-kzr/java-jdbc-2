@@ -1,7 +1,9 @@
 package com.alexkozyura.tutorial.jdbc2.start;
 
 import com.alexkozyura.tutorial.jdbc2.database.SQLiteConnection;
+import com.alexkozyura.tutorial.jdbc2.database.implementations.CompanyDB;
 import com.alexkozyura.tutorial.jdbc2.database.implementations.CountryDB;
+import com.alexkozyura.tutorial.jdbc2.dictionary.objects.Company;
 import com.alexkozyura.tutorial.jdbc2.dictionary.objects.Country;
 
 import java.sql.SQLException;
@@ -12,23 +14,23 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    private CountryDB countryDB = CountryDB.getInstance();
+    private CompanyDB companyDB = CompanyDB.getInstance();
 
     public static void main(String[] args) {
 
-        ArrayList<Country> countries = new Main().getAllCountries();
+        ArrayList<Company> companies = new Main().getAllCompanies();
     }
 
-    public ArrayList<Country> getAllCountries() {
+    public ArrayList<Company> getAllCompanies() {
 
-        ArrayList<Country> countries = new ArrayList<>();
+        ArrayList<Company> companies = new ArrayList<>();
 
         try {
-            countries.addAll(countryDB.getList(countryDB.getStatementAll()));
+            companies.addAll(companyDB.getList(companyDB.getStatementAll()));
         } catch (SQLException exception) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, exception);
         }
 
-        return countries;
+        return companies;
     }
 }
