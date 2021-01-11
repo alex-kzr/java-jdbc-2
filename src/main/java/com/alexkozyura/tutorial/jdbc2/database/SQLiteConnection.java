@@ -13,7 +13,7 @@ public class SQLiteConnection {
     private static Connection connection;
     private static InitialContext initialContext;
     private static DataSource dataSource;
-    public static final String URL = "jdbc:sqlite:E:\\Docs\\workspace\\Java\\java-jdbc2\\avia.db";
+    public static final String URL = "jdbc:sqlite:E:\\Docs\\workspace\\Java\\java-jdbc-2\\avia.db";
 
     private SQLiteConnection() {}
 
