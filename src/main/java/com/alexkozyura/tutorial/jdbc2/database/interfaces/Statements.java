@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public interface Statements {
 
-    PreparedStatement getStatement(long id) throws SQLException;
+    PreparedStatement getStatement(String idFieldName, long id) throws SQLException;
 
     PreparedStatement getStatementAll() throws SQLException;
 }

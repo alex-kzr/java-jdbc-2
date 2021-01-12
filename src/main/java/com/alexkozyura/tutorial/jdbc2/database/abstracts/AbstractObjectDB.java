@@ -72,11 +72,11 @@ public abstract class AbstractObjectDB<Type> implements FlightDAO<Type>, FillObj
     }
 
     @Override
-    public PreparedStatement getStatement(long id) throws SQLException {
+    public PreparedStatement getStatement(String idFieldName, long id) throws SQLException {
 
         Connection connection = SQLiteConnection.getInstance().getConnection();
 
-        PreparedStatement  preparedStatement = connection.prepareStatement("SELECT * FROM " + tableName + " WHERE id=?");
+        PreparedStatement  preparedStatement = connection.prepareStatement("SELECT * FROM " + tableName + " WHERE " + idFieldName + "=?");
         preparedStatement.setLong(1, id);
 
         return preparedStatement;
