@@ -8,10 +8,14 @@ import java.sql.SQLException;
 
 public class CompanyDB extends AbstractObjectDB {
 
-    public final static String TABLE_DIRECTORY_COMPANY = "dict_company";
+    public final static String TABLE_NAME = "dict_company";
+    public final static String FIELD_ID = "dcm_id";
+    public final static String FIELD_NAME = "dcm_name";
+    public final static String FIELD_DESCRIPTION = "dcm_description";
+    public final static String FIELD_ICON = "dcm_icon";
 
     private CompanyDB() {
-        super(TABLE_DIRECTORY_COMPANY);
+        super(TABLE_NAME);
     }
 
     private static CompanyDB instance;
@@ -30,10 +34,10 @@ public class CompanyDB extends AbstractObjectDB {
 
         Company company = new Company();
 
-        company.setId(resultSet.getLong("dcm_id"));
-        company.setName(resultSet.getString("dcm_name"));
-        company.setDescription(resultSet.getString("dcm_description"));
-        company.setIcon(resultSet.getBytes("dcm_icon"));
+        company.setId(resultSet.getLong(FIELD_ID));
+        company.setName(resultSet.getString(FIELD_NAME));
+        company.setDescription(resultSet.getString(FIELD_DESCRIPTION));
+        company.setIcon(resultSet.getBytes(FIELD_ICON));
 
         return company;
     }
