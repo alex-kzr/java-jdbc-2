@@ -8,14 +8,14 @@ import java.sql.SQLException;
 
 public class CountryDB extends AbstractObjectDB<Country> {
 
+    private static CountryDB instance;
+
     public final static String TABLE_NAME = "dict_country";
     public final static String FIELD_ID = "dcn_id";
     public final static String FIELD_NAME = "dcn_name";
     public final static String FIELD_CODE = "dcn_code";
     public final static String FIELD_FLAG = "dcn_flag";
     public final static String FIELD_DESCRIPTION = "dcn_description";
-
-    private static CountryDB instance;
 
     private CountryDB() {
         super(TABLE_NAME);

@@ -8,6 +8,8 @@ import java.sql.SQLException;
 
 public class CompanyDB extends AbstractObjectDB {
 
+    private static CompanyDB instance;
+
     public final static String TABLE_NAME = "dict_company";
     public final static String FIELD_ID = "dcm_id";
     public final static String FIELD_NAME = "dcm_name";
@@ -17,8 +19,6 @@ public class CompanyDB extends AbstractObjectDB {
     private CompanyDB() {
         super(TABLE_NAME);
     }
-
-    private static CompanyDB instance;
 
     public static CompanyDB getInstance() {
 
