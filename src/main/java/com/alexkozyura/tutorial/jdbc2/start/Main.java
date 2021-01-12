@@ -1,8 +1,7 @@
 package com.alexkozyura.tutorial.jdbc2.start;
 
-import com.alexkozyura.tutorial.jdbc2.database.implementations.CityDB;
-import com.alexkozyura.tutorial.jdbc2.dictionary.objects.City;
-import com.alexkozyura.tutorial.jdbc2.dictionary.objects.Company;
+import com.alexkozyura.tutorial.jdbc2.database.implementations.FlightClassDB;
+import com.alexkozyura.tutorial.jdbc2.dictionary.objects.FlightClass;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,23 +11,23 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    private CityDB cityDB = CityDB.getInstance();
+    private FlightClassDB flightClassDB = FlightClassDB.getInstance();
 
     public static void main(String[] args) {
 
-        ArrayList<City> cities = new Main().getAllCities();
+        ArrayList<FlightClass> flightClasses = new Main().getAllFlightClasses();
     }
 
-    public ArrayList<City> getAllCities() {
+    public ArrayList<FlightClass> getAllFlightClasses() {
 
-        ArrayList<City> cities = new ArrayList<>();
+        ArrayList<FlightClass> flightClasses = new ArrayList<>();
 
         try {
-            cities.addAll(cityDB.getList(cityDB.getStatementAll()));
+            flightClasses.addAll(flightClassDB.getList(flightClassDB.getStatementAll()));
         } catch (SQLException exception) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, exception);
         }
 
-        return cities;
+        return flightClasses;
     }
 }
