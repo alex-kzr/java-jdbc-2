@@ -6,7 +6,7 @@ import com.alexkozyura.tutorial.jdbc2.dictionary.objects.Company;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CompanyDB extends AbstractObjectDB {
+public class CompanyDB extends AbstractObjectDB<Company> {
 
     private static CompanyDB instance;
 
