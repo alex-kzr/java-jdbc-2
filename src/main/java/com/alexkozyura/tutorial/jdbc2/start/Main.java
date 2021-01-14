@@ -1,6 +1,8 @@
 package com.alexkozyura.tutorial.jdbc2.start;
 
+import com.alexkozyura.tutorial.jdbc2.database.implementations.AircraftPlaceDB;
 import com.alexkozyura.tutorial.jdbc2.database.implementations.PlaceDB;
+import com.alexkozyura.tutorial.jdbc2.dictionary.objects.AircraftPlace;
 import com.alexkozyura.tutorial.jdbc2.dictionary.objects.Place;
 
 import java.sql.SQLException;
@@ -11,23 +13,23 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    private PlaceDB placeDB = PlaceDB.getInstance();
+    private AircraftPlaceDB aircraftPlaceDb = AircraftPlaceDB.getInstance();
 
     public static void main(String[] args) {
 
-        ArrayList<Place> places = new Main().getAllPlaces();
+        ArrayList<AircraftPlace> aircraftPlaces = new Main().getAllAircraftPlaces();
     }
 
-    public ArrayList<Place> getAllPlaces() {
+    public ArrayList<AircraftPlace> getAllAircraftPlaces() {
 
-        ArrayList<Place> places = new ArrayList<>();
+        ArrayList<AircraftPlace> aircraftPlaces = new ArrayList<>();
 
         try {
-            places.addAll(placeDB.getList(placeDB.getStatementAll()));
+            aircraftPlaces.addAll(aircraftPlaceDb.getList(aircraftPlaceDb.getStatementAll()));
         } catch (SQLException exception) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, exception);
         }
 
-        return places;
+        return aircraftPlaces;
     }
 }
