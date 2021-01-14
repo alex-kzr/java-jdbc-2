@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public abstract class AbstractObjectDB<Type> implements FlightDAO<Type>, FillObject<Type>, Statements {
@@ -40,7 +41,7 @@ public abstract class AbstractObjectDB<Type> implements FlightDAO<Type>, FillObj
     }
 
     @Override
-    public Type get(PreparedStatement preparedStatement) throws SQLException {
+    public Type get(PreparedStatement preparedStatement) throws SQLException, ParseException {
 
         Type object = null;
 
@@ -57,7 +58,7 @@ public abstract class AbstractObjectDB<Type> implements FlightDAO<Type>, FillObj
     }
 
     @Override
-    public ArrayList<Type> getList(PreparedStatement preparedStatement) throws SQLException {
+    public ArrayList<Type> getList(PreparedStatement preparedStatement) throws SQLException, ParseException {
 
         ArrayList<Type> list = new ArrayList<>();
 

@@ -5,6 +5,7 @@ import com.alexkozyura.tutorial.jdbc2.objects.dict.AircraftPlace;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 
 public class AircraftPlaceDB extends AbstractObjectDB<AircraftPlace> {
 
@@ -30,7 +31,7 @@ public class AircraftPlaceDB extends AbstractObjectDB<AircraftPlace> {
     }
 
     @Override
-    public AircraftPlace fillObject(ResultSet resultSet) throws SQLException {
+    public AircraftPlace fillObject(ResultSet resultSet) throws SQLException, ParseException {
 
         AircraftPlace aircraftPlace = new AircraftPlace();
 

@@ -5,6 +5,7 @@ import com.alexkozyura.tutorial.jdbc2.objects.dict.City;
 import com.alexkozyura.tutorial.jdbc2.objects.dict.Country;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 
 public class CityDB extends AbstractObjectDB<City> {
 
@@ -30,7 +31,7 @@ public class CityDB extends AbstractObjectDB<City> {
     }
 
     @Override
-    public City fillObject(ResultSet resultSet) throws SQLException {
+    public City fillObject(ResultSet resultSet) throws SQLException, ParseException {
 
         City city = new City();
 
