@@ -1,9 +1,10 @@
 package com.alexkozyura.tutorial.jdbc2.start;
 
-import com.alexkozyura.tutorial.jdbc2.database.implementations.PassengerDB;
-import com.alexkozyura.tutorial.jdbc2.objects.Passenger;
+import com.alexkozyura.tutorial.jdbc2.database.implementations.FlightDB;
+import com.alexkozyura.tutorial.jdbc2.objects.Flight;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,23 +12,25 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    private PassengerDB passengerDb = PassengerDB.getInstance();
+    private FlightDB flightDb = FlightDB.getInstance();
 
     public static void main(String[] args) {
 
-        ArrayList<Passenger> passengers = new Main().getAllPassengers();
+        ArrayList<Flight> flights = new Main().getAllFlights();
     }
 
-    public ArrayList<Passenger> getAllPassengers() {
+    public ArrayList<Flight> getAllFlights() {
 
-        ArrayList<Passenger> passengers = new ArrayList<>();
+        ArrayList<Flight> flights = new ArrayList<>();
 
         try {
-            passengers.addAll(passengerDb.getList(passengerDb.getStatementAll()));
+            flights.addAll(flightDb.getList(flightDb.getStatementAll()));
         } catch (SQLException exception) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, exception);
+        } catch (ParseException exception) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, exception);
         }
 
-        return passengers;
+        return flights;
     }
 }
