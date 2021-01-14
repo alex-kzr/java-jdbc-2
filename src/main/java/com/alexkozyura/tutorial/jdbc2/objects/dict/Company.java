@@ -1,4 +1,4 @@
-package com.alexkozyura.tutorial.jdbc2.dictionary.objects;
+package com.alexkozyura.tutorial.jdbc2.objects.dict;
 
 public class Company {
 

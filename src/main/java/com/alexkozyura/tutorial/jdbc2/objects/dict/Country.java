@@ -1,9 +1,11 @@
-package com.alexkozyura.tutorial.jdbc2.dictionary.objects;
+package com.alexkozyura.tutorial.jdbc2.objects.dict;
 
-public class FlightClass {
+public class Country {
 
     private long id;
     private String name;
+    private String code;
+    private byte[] flag;
     private String description;
 
     public long getId() {
@@ -20,6 +22,22 @@ public class FlightClass {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public byte[] getFlag() {
+        return flag;
+    }
+
+    public void setFlag(byte[] flag) {
+        this.flag = flag;
     }
 
     public String getDescription() {

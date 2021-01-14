@@ -1,7 +1,7 @@
 package com.alexkozyura.tutorial.jdbc2.objects;
 
-import com.alexkozyura.tutorial.jdbc2.dictionary.objects.Aircraft;
-import com.alexkozyura.tutorial.jdbc2.dictionary.objects.City;
+import com.alexkozyura.tutorial.jdbc2.objects.dict.Aircraft;
+import com.alexkozyura.tutorial.jdbc2.objects.dict.City;
 
 import java.util.Date;
 

@@ -1,7 +1,7 @@
 package com.alexkozyura.tutorial.jdbc2.database.implementations.dict;
 
 import com.alexkozyura.tutorial.jdbc2.database.abstracts.AbstractObjectDB;
-import com.alexkozyura.tutorial.jdbc2.dictionary.objects.FlightClass;
+import com.alexkozyura.tutorial.jdbc2.objects.dict.FlightClass;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

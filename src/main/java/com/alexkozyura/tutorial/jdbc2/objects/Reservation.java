@@ -1,6 +1,6 @@
 package com.alexkozyura.tutorial.jdbc2.objects;
 
-import com.alexkozyura.tutorial.jdbc2.dictionary.objects.Place;
+import com.alexkozyura.tutorial.jdbc2.objects.dict.Place;
 
 import java.util.Date;
 

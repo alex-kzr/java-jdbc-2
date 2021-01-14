@@ -1,11 +1,10 @@
-package com.alexkozyura.tutorial.jdbc2.dictionary.objects;
+package com.alexkozyura.tutorial.jdbc2.objects.dict;
 
-public class City {
+public class Aircraft {
 
     private long id;
     private String name;
-    private Country country;
-    private String code;
+    private Company company;
     private String description;
 
     public long getId() {
@@ -24,20 +23,12 @@ public class City {
         this.name = name;
     }
 
-    public Country getCountry() {
-        return country;
+    public Company getCompany() {
+        return company;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public String getDescription() {
