@@ -1,4 +1,4 @@
-package com.alexkozyura.tutorial.jdbc2.database.implementations;
+package com.alexkozyura.tutorial.jdbc2.database.implementations.dict;
 
 import com.alexkozyura.tutorial.jdbc2.database.abstracts.AbstractObjectDB;
 import com.alexkozyura.tutorial.jdbc2.dictionary.objects.City;
