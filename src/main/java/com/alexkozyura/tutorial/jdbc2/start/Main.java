@@ -1,7 +1,7 @@
 package com.alexkozyura.tutorial.jdbc2.start;
 
-import com.alexkozyura.tutorial.jdbc2.database.implementations.FlightDB;
-import com.alexkozyura.tutorial.jdbc2.objects.Flight;
+import com.alexkozyura.tutorial.jdbc2.database.implementations.ReservationDB;
+import com.alexkozyura.tutorial.jdbc2.objects.Reservation;
 
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -12,25 +12,29 @@ import java.util.logging.Logger;
 
 public class Main {
 
-    private FlightDB flightDb = FlightDB.getInstance();
+    private ReservationDB reservationDb = ReservationDB.getInstance();
 
     public static void main(String[] args) {
 
-        ArrayList<Flight> flights = new Main().getAllFlights();
+        ArrayList<Reservation> reservations = new Main().getAllReservations();
     }
 
-    public ArrayList<Flight> getAllFlights() {
+    public ArrayList<Reservation> getAllReservations() {
 
-        ArrayList<Flight> flights = new ArrayList<>();
+        ArrayList<Reservation> reservations = new ArrayList<>();
 
         try {
-            flights.addAll(flightDb.getList(flightDb.getStatementAll()));
-        } catch (SQLException exception) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, exception);
-        } catch (ParseException exception) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, exception);
+            reservations.addAll(
+                    reservationDb.getRecordList(
+                            reservationDb.getAllRecordsStatement()
+                    )
+            );
+        } catch (SQLException sqlException) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, sqlException);
+        } catch (ParseException parseException) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, parseException);
         }
 
-        return flights;
+        return reservations;
     }
 }
