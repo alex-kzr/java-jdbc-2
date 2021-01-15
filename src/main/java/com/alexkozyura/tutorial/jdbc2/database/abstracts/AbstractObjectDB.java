@@ -41,7 +41,7 @@ public abstract class AbstractObjectDB<Type> implements FlightDAO<Type>, FillObj
     }
 
     @Override
-    public Type get(PreparedStatement preparedStatement) throws SQLException, ParseException {
+    public Type getRecord(PreparedStatement preparedStatement) throws SQLException, ParseException {
 
         Type object = null;
 
@@ -58,7 +58,7 @@ public abstract class AbstractObjectDB<Type> implements FlightDAO<Type>, FillObj
     }
 
     @Override
-    public ArrayList<Type> getList(PreparedStatement preparedStatement) throws SQLException, ParseException {
+    public ArrayList<Type> getRecordList(PreparedStatement preparedStatement) throws SQLException, ParseException {
 
         ArrayList<Type> list = new ArrayList<>();
 
@@ -73,7 +73,7 @@ public abstract class AbstractObjectDB<Type> implements FlightDAO<Type>, FillObj
     }
 
     @Override
-    public PreparedStatement getStatement(String idFieldName, long id) throws SQLException {
+    public PreparedStatement getRecordStatement(String idFieldName, long id) throws SQLException {
 
         Connection connection = SQLiteConnection.getInstance().getConnection();
 
@@ -84,7 +84,7 @@ public abstract class AbstractObjectDB<Type> implements FlightDAO<Type>, FillObj
     }
 
     @Override
-    public PreparedStatement getStatementAll() throws SQLException {
+    public PreparedStatement getAllRecordsStatement() throws SQLException {
 
         Connection connection = SQLiteConnection.getInstance().getConnection();
 

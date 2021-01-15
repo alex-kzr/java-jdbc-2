@@ -38,7 +38,7 @@ public class CityDB extends AbstractObjectDB<City> {
         city.setId(resultSet.getLong(FIELD_ID));
         city.setName(resultSet.getString(FIELD_NAME));
 
-        Country country = CountryDB.getInstance().get(CountryDB.getInstance().getStatement(CountryDB.FIELD_ID ,resultSet.getLong(FIELD_COUNTRY_ID)));
+        Country country = CountryDB.getInstance().getRecord(CountryDB.getInstance().getRecordStatement(CountryDB.FIELD_ID ,resultSet.getLong(FIELD_COUNTRY_ID)));
 
         city.setCountry(country);
         city.setDescription(resultSet.getString(FIELD_DESCRIPTION));

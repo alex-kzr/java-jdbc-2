@@ -53,18 +53,18 @@ public class FlightDB extends AbstractObjectDB<Flight> {
         flight.setArrivalDate(simpleDateFormat.parse(resultSet.getString(FIELD_ARRIVAL_DATE)));
 
         flight.setAircraft(aircraftDb
-                .get(aircraftDb
-                        .getStatement(aircraftDb.FIELD_ID,
+                .getRecord(aircraftDb
+                        .getRecordStatement(aircraftDb.FIELD_ID,
                                 resultSet.getLong(FIELD_AIRCRAFT_ID))));
 
         flight.setDepartureCity(cityDb
-                .get(cityDb
-                        .getStatement(cityDb.FIELD_ID,
+                .getRecord(cityDb
+                        .getRecordStatement(cityDb.FIELD_ID,
                                 resultSet.getLong(FIELD_DEPARTURE_CITY_ID))));
 
         flight.setArrivalCity(cityDb
-                .get(cityDb
-                        .getStatement(cityDb.FIELD_ID,
+                .getRecord(cityDb
+                        .getRecordStatement(cityDb.FIELD_ID,
                                 resultSet.getLong(FIELD_ARRIVAL_CITY_ID))));
 
         flight.setPrice(resultSet.getInt(FIELD_PRICE));

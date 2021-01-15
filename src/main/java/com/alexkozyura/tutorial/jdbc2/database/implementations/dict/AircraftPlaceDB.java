@@ -42,18 +42,18 @@ public class AircraftPlaceDB extends AbstractObjectDB<AircraftPlace> {
         aircraftPlace.setId(resultSet.getLong(FIELD_ID));
 
         aircraftPlace.setAircraft(aircraftDb
-                .get(aircraftDb
-                        .getStatement(aircraftDb.FIELD_ID,
+                .getRecord(aircraftDb
+                        .getRecordStatement(aircraftDb.FIELD_ID,
                                 resultSet.getLong(FIELD_AIRCRAFT_ID))));
 
         aircraftPlace.setPlace(placeDb
-                .get(placeDb
-                        .getStatement(placeDb.FIELD_ID,
+                .getRecord(placeDb
+                        .getRecordStatement(placeDb.FIELD_ID,
                                 resultSet.getLong(FIELD_PLACE_ID))));
 
         aircraftPlace.setFlightClass(flightClassDb
-                .get(flightClassDb
-                        .getStatement(flightClassDb.FIELD_ID,
+                .getRecord(flightClassDb
+                        .getRecordStatement(flightClassDb.FIELD_ID,
                                 resultSet.getLong(FIELD_FLIGHT_CLASS_ID))));
 
         return aircraftPlace;

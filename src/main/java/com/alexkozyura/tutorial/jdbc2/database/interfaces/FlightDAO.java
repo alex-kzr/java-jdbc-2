@@ -9,7 +9,7 @@ public interface FlightDAO<Type> {
 
     int insert(PreparedStatement preparedStatement) throws SQLException;
 
-    Type get(PreparedStatement preparedStatement) throws SQLException, ParseException;
+    Type getRecord(PreparedStatement preparedStatement) throws SQLException, ParseException;
 
-    ArrayList<Type> getList(PreparedStatement preparedStatement) throws SQLException, ParseException;
+    ArrayList<Type> getRecordList(PreparedStatement preparedStatement) throws SQLException, ParseException;
 }
